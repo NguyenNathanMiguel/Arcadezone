@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Arcade Zone — The global arcade machines encyclopedia, pro strategy guide, and Vietnam gaming community hub.">
+  <title>Arcade World — Global Machines &amp; Vietnam Community</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">ARCADE<span>&nbsp;ZONE</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="machines.html">Machines</a></li>
+      <li><a href="community.html">Community</a></li>
+      <li><a href="tips.html">Tips</a></li>
+      <li><a href="locations.html">Locations</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="https://arcadeworld2-0.onrender.com/" class="nav-enter-btn">Enter Arcade</a>
+      <div id="auth-user-slot"></div>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-badge">GLOBAL ARCADE ENCYCLOPEDIA &amp; COMMUNITY</div>
+    <h1 class="hero-title">
+      ARCADE<br>
+      WORLD
+    </h1>
+    <p class="hero-subtitle">The definitive archive of arcade machines worldwide, pro scoring mechanics, and Vietnam's player community hub.</p>
+    <div class="hero-cta">
+      <a href="https://arcadeworld2-0.onrender.com/" class="btn btn-enter">ENTER ARCADE WORLD</a>
+      <a href="machines.html" class="btn">Explore Machines</a>
+      <a href="community.html" class="btn btn-magenta">Join Community</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS STRIP -->
+<div class="stats-strip">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <span class="stat-number neon-text">100+</span>
+        <span class="stat-label">Machines Documented</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number neon-magenta">6</span>
+        <span class="stat-label">Arcade Categories</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number neon-gold">90+</span>
+        <span class="stat-label">Mall Arcades in VN</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number neon-purple">100%</span>
+        <span class="stat-label">Player Community</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- GLOBAL MACHINE CATEGORIES -->
+<section class="section">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:48px;">
+      <h2 class="section-title neon-text">CABINET ENCYCLOPEDIA</h2>
+      <p style="color:var(--text-dim);max-width:560px;margin:24px auto 0;">Explore technical breakdowns, physics rulesets, and scoring algorithms across every arcade discipline.</p>
+    </div>
+    <div class="card-grid">
+      <div class="card card-redemption reveal">
+        <div class="card-icon">🎟️</div>
+        <h3 class="card-title">Redemption Games</h3>
+        <p class="card-desc">Skill-based ticket-dispensing games: Skee-Ball, Pop-A-Shot, Quik Drop, Stacker, and Monster Drop.</p>
+        <a href="machines.html#redemption" class="card-link">Explore Redemption →</a>
+      </div>
+      <div class="card card-merchandiser reveal">
+        <div class="card-icon">🎁</div>
+        <h3 class="card-title">Merchandiser Games</h3>
+        <p class="card-desc">Plush claw cranes, UFO catchers, Japanese capsule gashapons, and mechanical coin pushers.</p>
+        <a href="machines.html#merchandiser" class="card-link">Explore Merchandisers →</a>
+      </div>
+      <div class="card card-pinball reveal">
+        <div class="card-icon">🔮</div>
+        <h3 class="card-title">Pinball Machines</h3>
+        <p class="card-desc">Electromechanical legends: Medieval Madness, Deadpool, Addams Family, kinetic physics and multiball wizardry.</p>
+        <a href="machines.html#pinball" class="card-link">Explore Pinball →</a>
+      </div>
+      <div class="card reveal" style="border-color:rgba(0,255,136,0.3);">
+        <div class="card-icon">🎵</div>
+        <h3 class="card-title" style="color:var(--green);">Rhythm &amp; Music</h3>
+        <p class="card-desc">Japanese dance and drumming sensations: MaiMai DX, Dance Dance Revolution (DDR), and Taiko no Tatsujin.</p>
+        <a href="machines.html#rhythm" class="card-link" style="color:var(--green);">Explore Rhythm →</a>
+      </div>
+      <div class="card reveal" style="border-color:rgba(255,153,0,0.3);">
+        <div class="card-icon">🏎️</div>
+        <h3 class="card-title" style="color:var(--orange);">Racing &amp; Driving</h3>
+        <p class="card-desc">Cockpit drift simulators with force-feedback and manual stick-shifts: Initial D The Arcade and Mario Kart.</p>
+        <a href="machines.html#racing" class="card-link" style="color:var(--orange);">Explore Racing →</a>
+      </div>
+      <div class="card reveal" style="border-color:rgba(255,51,51,0.3);">
+        <div class="card-icon">💥</div>
+        <h3 class="card-title" style="color:var(--red);">Action &amp; Shooters</h3>
+        <p class="card-desc">Enclosed theater light gun cabinets: Time Crisis 5 dual-pedal system and House of the Dead: Scarlet Dawn.</p>
+        <a href="machines.html#shooter" class="card-link" style="color:var(--red);">Explore Shooters →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VIETNAM ARCADE FINDER PREVIEW -->
+<section class="section section-alt">
+  <div class="container">
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:48px; align-items:center;">
+      <div class="reveal">
+        <span class="tag tag-redemption" style="margin-bottom:12px;">Vietnam Directory</span>
+        <h2 style="font-family:'Orbitron',sans-serif; font-size:2rem; color:#fff; margin-bottom:16px;">
+          FIND ARCADES ACROSS VIETNAM
+        </h2>
+        <p style="color:var(--text-dim); line-height:1.7; margin-bottom:24px;">
+          Looking for a specific claw machine, MaiMai cabinet, or bowling alley near you? Browse our curated directory of over 90 game zones inside shopping malls and entertainment centers across TP. Hồ Chí Minh, Hà Nội, Đà Nẵng, Bình Dương, and more.
+        </p>
+        <a href="locations.html" class="btn">Search Arcade Locations →</a>
+      </div>
+
+      <div class="card reveal" style="border-color:var(--cyan); background:radial-gradient(circle at 70% 30%, rgba(102,252,241,0.1), #10101e 80%);">
+        <h4 style="font-family:'Orbitron',sans-serif; color:var(--cyan); margin-bottom:12px; font-size:0.95rem;">POPULAR MALL HUBS IN VIETNAM</h4>
+        <ul style="list-style:none; display:flex; flex-direction:column; gap:10px; font-size:0.88rem; color:var(--text-dim);">
+          <li><strong>Saigon Centre / Takashimaya</strong> — Timezone Level 4 (Q1, TP.HCM)</li>
+          <li><strong>Landmark 81</strong> — Timezone B1 Bowling &amp; Pinball (Bình Thạnh, TP.HCM)</li>
+          <li><strong>Aeon Mall Tân Phú &amp; Bình Tân</strong> — Dream Games &amp; Initial D</li>
+          <li><strong>Vạn Hạnh Mall</strong> — PowerBowl 388 Level 5 (Q10, TP.HCM)</li>
+          <li><strong>Vincom Times City &amp; Royal City</strong> — Timezone Giant Hall (Hà Nội)</li>
+          <li><strong>Lotte Mall West Lake</strong> — Funzone &amp; VR Theme Park (Tây Hồ, Hà Nội)</li>
+          <li><strong>Helio Center</strong> — Helio Play Arcade Complex (Đà Nẵng)</li>
+        </ul>
+        <div style="margin-top:20px; text-align:right;">
+          <a href="locations.html" style="font-family:'Orbitron',sans-serif; font-size:0.75rem; color:var(--cyan);">View all 90+ locations →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMUNITY SQUAD CTA -->
+<section class="section">
+  <div class="container">
+    <div class="card" style="border-color:var(--magenta); background: radial-gradient(ellipse at 50% 50%, rgba(255,110,199,0.1), #10101e 80%); padding:56px 36px; text-align:center;">
+      <h2 style="font-family:'Orbitron',sans-serif; font-size:2rem; color:#fff; text-shadow:0 0 16px var(--magenta); margin-bottom:14px;">
+        COMMUNITY DISCUSSIONS &amp; GROUP CHATS
+      </h2>
+      <p style="color:var(--text-dim); max-width:680px; margin:0 auto 28px; font-size:0.95rem; line-height:1.7;">
+        Sign in with Gmail to join discussions, share game records, create squad group chats with unique invite links, and organize meetups with players across the country.
+      </p>
+      <div style="display:flex; justify-content:center; gap:16px; flex-wrap:wrap;">
+        <a href="community.html" class="btn btn-magenta">Enter Community Hub</a>
+        <a href="tips.html" class="btn">Read Pro Strategy Guide</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">ARCADE<span>&nbsp;ZONE</span></div>
+        <p class="footer-tagline">The global arcade encyclopedia and Vietnam player community.</p>
+      </div>
+      <div>
+        <p class="footer-heading">Explore</p>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="machines.html">Arcade Machines</a></li>
+          <li><a href="community.html">Community &amp; Groups</a></li>
+          <li><a href="tips.html">Pro Tips &amp; Strategies</a></li>
+          <li><a href="locations.html">Arcade Finder Vietnam</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-heading">Play Online</p>
+        <p style="color:var(--text-dim); font-size:0.85rem; line-height:1.6; margin-bottom:14px;">
+          Jump into our 2D multiplayer simulation to roam virtual arcade floors and challenge real players.
+        </p>
+        <a href="https://arcadeworld2-0.onrender.com/" class="btn btn-enter btn-sm">Enter Arcade World</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Arcade Zone. All rights reserved.</span>
+      <span><a href="https://arcadeworld2-0.onrender.com/">Play Arcade World Online</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- Supabase JS SDK & Client Config -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="assets/js/supabase-config.js"></script>
+<script src="assets/js/supabase-client.js"></script>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

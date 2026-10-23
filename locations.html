@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Find arcade centers, claw machines, and game zones inside shopping malls and complexes across Vietnam.">
+  <title>Arcade Finder Vietnam — Arcade Zone</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="page-offset">
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">ARCADE<span>&nbsp;ZONE</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="machines.html">Machines</a></li>
+      <li><a href="community.html">Community</a></li>
+      <li><a href="tips.html">Tips</a></li>
+      <li><a href="locations.html" class="active">Locations</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="https://arcadeworld2-0.onrender.com/" class="nav-enter-btn">Enter Arcade</a>
+      <div id="auth-user-slot"></div>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-grid"></div>
+  <div class="container text-center page-hero-content">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a> <span>/</span> Arcade Finder Vietnam
+    </div>
+    <h1 class="neon-text">ARCADE FINDER VIETNAM</h1>
+    <p>Discover game zones, claw machine hubs, and pinball alleys inside shopping malls and entertainment complexes across Vietnam.</p>
+  </div>
+</section>
+
+<!-- MAIN CONTENT -->
+<section class="section">
+  <div class="container">
+    <!-- FILTERS -->
+    <div class="filter-bar" style="margin-bottom:28px;">
+      <button class="filter-btn city-btn active" data-city="All">All Regions</button>
+      <button class="filter-btn city-btn" data-city="TP. Hồ Chí Minh">TP. Hồ Chí Minh</button>
+      <button class="filter-btn city-btn" data-city="Hà Nội">Hà Nội</button>
+      <button class="filter-btn city-btn" data-city="Đà Nẵng">Đà Nẵng</button>
+      <button class="filter-btn city-btn" data-city="Bình Dương">Bình Dương</button>
+      <button class="filter-btn city-btn" data-city="Đồng Nai">Đồng Nai</button>
+      <button class="filter-btn city-btn" data-city="Hải Phòng">Hải Phòng</button>
+      <button class="filter-btn city-btn" data-city="Cần Thơ">Cần Thơ</button>
+      <button class="filter-btn city-btn" data-city="Other">Other Cities</button>
+    </div>
+
+    <!-- SEARCH & COUNTER -->
+    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; margin-bottom:36px;">
+      <input type="text" id="locations-search" class="search-bar" style="max-width:380px;" placeholder="Search mall name, district, brand (e.g. Aeon, Vincom, Timezone)...">
+      <span id="locations-count" style="font-family:'Orbitron',sans-serif; font-size:0.8rem; color:var(--cyan);">Loading locations...</span>
+    </div>
+
+    <!-- LOCATIONS GRID -->
+    <div class="card-grid" id="locations-grid">
+      <div class="loading">SEARCHING ARCADE VENUES IN VIETNAM...</div>
+    </div>
+
+    <!-- COMMUNITY SUBMISSION CALLOUT -->
+    <div class="card" style="margin-top:56px; border-color:var(--magenta); background: radial-gradient(ellipse at 50% 50%, rgba(255,110,199,0.06), #10101e 80%); padding:36px; text-align:center;">
+      <h3 style="font-family:'Orbitron',sans-serif; font-size:1.2rem; color:var(--magenta); margin-bottom:8px;">
+        KNOW AN ARCADE VENUE NOT LISTED HERE?
+      </h3>
+      <p style="color:var(--text-dim); max-width:600px; margin:0 auto 20px; font-size:0.9rem;">
+        Help fellow arcade enthusiasts discover hidden spots, claw machine stores, and retro cabinets in your neighborhood!
+      </p>
+      <a href="community.html" class="btn btn-magenta btn-sm">Post to Community Hub →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">ARCADE<span>&nbsp;ZONE</span></div>
+        <p class="footer-tagline">The global arcade encyclopedia and Vietnam player community.</p>
+      </div>
+      <div>
+        <p class="footer-heading">Explore</p>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="machines.html">Arcade Machines</a></li>
+          <li><a href="community.html">Community &amp; Groups</a></li>
+          <li><a href="tips.html">Pro Tips &amp; Strategies</a></li>
+          <li><a href="locations.html">Arcade Finder Vietnam</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-heading">Play Online</p>
+        <p style="color:var(--text-dim); font-size:0.85rem; line-height:1.6; margin-bottom:14px;">
+          Jump into the 2D multiplayer simulation to roam arcade floors and challenge real players.
+        </p>
+        <a href="https://arcadeworld2-0.onrender.com/" class="btn btn-enter btn-sm">Enter Arcade World</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Arcade Zone. All rights reserved.</span>
+      <span><a href="https://arcadeworld2-0.onrender.com/">Play Arcade World Online</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- Supabase JS SDK & Client Config -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="assets/js/supabase-config.js"></script>
+<script src="assets/js/supabase-client.js"></script>
+
+<script src="assets/js/main.js"></script>
+<script src="data/locations-data.js"></script>
+<script src="assets/js/locations.js"></script>
+</body>
+</html>

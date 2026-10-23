@@ -1,0 +1,181 @@
+{
+  "posts": [
+    {
+      "id": "post-1",
+      "author": "Minh Tuấn (Gamer)",
+      "email": "tuan.arcade.vn@gmail.com",
+      "avatar": "https://api.dicebear.com/7.x/bottts/svg?seed=tuan",
+      "tag": "Tips & Strategy",
+      "title": "Mẹo canh góc ném 40 điểm ở Skee-Ball Aeon Tân Phú",
+      "content": "Hôm qua mình vừa test 15 lượt Skee-Ball ở Dream Games Tân Phú. Thấy mép rãnh bên phải máy số 2 có độ dốc chuẩn nhất. Đừng ném mạnh quá mà hãy thả nhẹ theo đà dưới tay (underhand roll), bóng sẽ xoáy nhẹ vào rãnh 40 điểm. Mình gom được 1,200 vé chỉ sau 20 phút!",
+      "likes": 28,
+      "date": "2026-10-15",
+      "comments": [
+        {
+          "author": "Hoàng Nam",
+          "email": "namhoang99@gmail.com",
+          "avatar": "https://api.dicebear.com/7.x/bottts/svg?seed=nam",
+          "content": "Xác nhận nha, máy 2 rãnh rất mượt, mình cũng hay cày vé đổi lego ở đây!",
+          "date": "2026-10-15"
+        },
+        {
+          "author": "Bảo Ngọc",
+          "email": "ngoc.arcade@gmail.com",
+          "avatar": "https://api.dicebear.com/7.x/bottts/svg?seed=ngoc",
+          "content": "Bạn ném một tay hay hai tay vậy? Mình bị trượt ra ngoài rãnh 10 hoài.",
+          "date": "2026-10-16"
+        }
+      ]
+    },
+    {
+      "id": "post-2",
+      "author": "Đức Anh Pinball",
+      "email": "ducanh.pinball@gmail.com",
+      "avatar": "https://api.dicebear.com/7.x/bottts/svg?seed=ducanh",
+      "tag": "Machine Records",
+      "title": "Vừa phá kỷ lục Medieval Madness ở Timezone Landmark 81 — 1.28 Tỷ điểm!",
+      "content": "Sau 3 tuần luyện kỹ thuật Dead Bounce và bẫy bóng ở flipper phải, tối nay mình đã hạ thành công 5 lần Castle và kích hoạt được Royal Rumble x5 Multiball. Tổng điểm đạt 1,284,750,000! Có bạn nào ở Timezone Landmark hôm nay thấy không?",
+      "likes": 45,
+      "date": "2026-10-14",
+      "comments": [
+        {
+          "author": "Lâm Vũ",
+          "email": "lamvu.gaming@gmail.com",
+          "avatar": "https://api.dicebear.com/7.x/bottts/svg?seed=lam",
+          "content": "Quá khủng! Mình cao nhất mới được 600 triệu là rớt bóng số 3 rồi.",
+          "date": "2026-10-14"
+        }
+      ]
+    },
+    {
+      "id": "post-3",
+      "author": "Trâm Anh Claw",
+      "email": "tramanh.gắpquà@gmail.com",
+      "avatar": "https://api.dicebear.com/7.x/bottts/svg?seed=tramanh",
+      "tag": "Claw Loot",
+      "title": "Kinh nghiệm móc tag gấu bông Capybara ở Vạn Hạnh Mall",
+      "content": "Các máy gắp thú ở PowerBowl Vạn Hạnh Mall mới về lô gấu Capybara size to. Lực kẹp không chặt lắm nên nếu gắp vô bụng gấu sẽ bị tuột khi kéo lên. Bí quyết: canh một càng móc vào dải ruy băng hoặc tag giấy ngay cổ gấu, bảo đảm giật rơi vào họng 100%!",
+      "likes": 56,
+      "date": "2026-10-16",
+      "comments": [
+        {
+          "author": "Thanh Trúc",
+          "email": "truc.arcade@gmail.com",
+          "avatar": "https://api.dicebear.com/7.x/bottts/svg?seed=truc",
+          "content": "Cảm ơn tip của bạn, chiều nay mình ghé test liền!",
+          "date": "2026-10-16"
+        }
+      ]
+    },
+    {
+      "id": "post-4",
+      "author": "Quân Rhythm",
+      "email": "quan.maimai.vn@gmail.com",
+      "avatar": "https://api.dicebear.com/7.x/bottts/svg?seed=quan",
+      "tag": "Meetups",
+      "title": "Giao lưu MaiMai DX & Taiko cuối tuần này tại Gigamall Thủ Đức",
+      "content": "Thứ 7 tuần này (14:00) nhóm tụi mình có buổi offline giao lưu máy MaiMai DX và Taiko no Tatsujin ở D-Game Zone tầng 6 Gigamall. Bạn nào đam mê game âm nhạc thì tham gia chung nha, có link group chat bên dưới để liên hệ nè!",
+      "likes": 33,
+      "date": "2026-10-16",
+      "comments": []
+    }
+  ],
+  "groups": [
+    {
+      "id": "sg-claw-squad",
+      "name": "Sài Gòn Claw Hunters",
+      "description": "Cộng đồng săn gấu bông & capsule collectible tại các TTTM khắp TP. Hồ Chí Minh.",
+      "category": "Merchandiser",
+      "memberCount": 142,
+      "creator": "tramanh.gắpquà@gmail.com",
+      "messages": [
+        {
+          "author": "Trâm Anh",
+          "email": "tramanh.gắpquà@gmail.com",
+          "avatar": "https://api.dicebear.com/7.x/bottts/svg?seed=tramanh",
+          "text": "Chào mọi người! Ai vừa đi Vạn Hạnh Mall về chưa? Hàng mới về nhiều lắm nha.",
+          "time": "14:20"
+        },
+        {
+          "author": "Thanh Trúc",
+          "email": "truc.arcade@gmail.com",
+          "avatar": "https://api.dicebear.com/7.x/bottts/svg?seed=truc",
+          "text": "Mình vừa gắp được 2 bé Capybara nè, áp dụng mẹo móc tag siêu dính luôn!",
+          "time": "14:35"
+        },
+        {
+          "author": "Minh Tuấn",
+          "email": "tuan.arcade.vn@gmail.com",
+          "avatar": "https://api.dicebear.com/7.x/bottts/svg?seed=tuan",
+          "text": "Tối nay có ai đi Timezone Takashimaya không, đi chung cho vui!",
+          "time": "15:10"
+        }
+      ]
+    },
+    {
+      "id": "hn-pinball-wizards",
+      "name": "Hà Nội Pinball Wizards",
+      "description": "Nhóm tập hợp anh em đam mê máy pinball cổ điển và hiện đại tại Hà Nội.",
+      "category": "Pinball",
+      "memberCount": 89,
+      "creator": "ducanh.pinball@gmail.com",
+      "messages": [
+        {
+          "author": "Đức Anh",
+          "email": "ducanh.pinball@gmail.com",
+          "avatar": "https://api.dicebear.com/7.x/bottts/svg?seed=ducanh",
+          "text": "Chào các cơ thủ pinball thủ đô! Cuối tuần này hẹn nhau ở Royal City nhé.",
+          "time": "10:15"
+        },
+        {
+          "author": "Hoàng Nam",
+          "email": "namhoang99@gmail.com",
+          "avatar": "https://api.dicebear.com/7.x/bottts/svg?seed=nam",
+          "text": "Bàn Deadpool ở Royal City flipper trái hơi nhẹ, anh em chú ý dead bounce cẩn thận.",
+          "time": "11:00"
+        }
+      ]
+    },
+    {
+      "id": "vn-redemption-masters",
+      "name": "Vietnam Ticket Farmers",
+      "description": "Chia sẻ chiến thuật cày vé tối đa ở các máy Quik Drop, Skee-Ball, Pop-A-Shot để đổi quà lớn.",
+      "category": "Redemption",
+      "memberCount": 215,
+      "creator": "tuan.arcade.vn@gmail.com",
+      "messages": [
+        {
+          "author": "Minh Tuấn",
+          "email": "tuan.arcade.vn@gmail.com",
+          "avatar": "https://api.dicebear.com/7.x/bottts/svg?seed=tuan",
+          "text": "Quik Drop đợt này thùng chạy chậm hơn, thả nhịp 4 trái mỗi xô là ăn trọn jackpot 500 vé ngon lành.",
+          "time": "09:30"
+        },
+        {
+          "author": "Lâm Vũ",
+          "email": "lamvu.gaming@gmail.com",
+          "avatar": "https://api.dicebear.com/7.x/bottts/svg?seed=lam",
+          "text": "Hôm nay mình gom được 15,000 vé rồi, sắp đủ đổi Nintendo Switch!",
+          "time": "13:45"
+        }
+      ]
+    },
+    {
+      "id": "rhythm-games-vietnam",
+      "name": "Rhythm Gamers VN",
+      "description": "MaiMai DX, Taiko, Sound Voltex, Chunithm, DDR trên toàn quốc.",
+      "category": "Rhythm",
+      "memberCount": 310,
+      "creator": "quan.maimai.vn@gmail.com",
+      "messages": [
+        {
+          "author": "Quân Rhythm",
+          "email": "quan.maimai.vn@gmail.com",
+          "avatar": "https://api.dicebear.com/7.x/bottts/svg?seed=quan",
+          "text": "Thứ 7 này 14h hẹn ở Gigamall nhé anh em, máy MaiMai đã update bài hát mới!",
+          "time": "16:00"
+        }
+      ]
+    }
+  ]
+}

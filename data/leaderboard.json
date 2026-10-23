@@ -1,0 +1,33 @@
+{
+  "updated": "2026-10-14",
+  "categories": ["redemption", "merchandiser", "pinball"],
+  "records": [
+    { "machine_id": "skee-ball", "player": "StarRoller", "score": 4800, "date": "2026-10-12", "note": "9 perfect 40-ring rolls" },
+    { "machine_id": "skee-ball", "player": "NightOwl", "score": 4400, "date": "2026-10-08" },
+    { "machine_id": "skee-ball", "player": "ArcadeKing", "score": 4100, "date": "2026-09-30" },
+    { "machine_id": "basketball-shoot", "player": "HoopLord", "score": 58, "date": "2026-10-11", "note": "58 baskets in 60 seconds" },
+    { "machine_id": "basketball-shoot", "player": "QuickShot", "score": 52, "date": "2026-10-05" },
+    { "machine_id": "basketball-shoot", "player": "NetKing", "score": 49, "date": "2026-09-28" },
+    { "machine_id": "whack-a-mole", "player": "MoleSlayer", "score": 980, "date": "2026-10-13" },
+    { "machine_id": "whack-a-mole", "player": "ZapMaster", "score": 920, "date": "2026-10-10" },
+    { "machine_id": "whack-a-mole", "player": "BopKing", "score": 870, "date": "2026-10-01" },
+    { "machine_id": "stacker", "player": "PrecisionX", "score": 99, "date": "2026-10-09", "note": "MAJOR prize winner!" },
+    { "machine_id": "stacker", "player": "BlockMaster", "score": 97, "date": "2026-09-25" },
+    { "machine_id": "stacker", "player": "TowerKing", "score": 95, "date": "2026-09-18" },
+    { "machine_id": "pop-the-lock", "player": "LockPicker", "score": 22, "date": "2026-10-12", "note": "22-chain streak" },
+    { "machine_id": "pop-the-lock", "player": "ZenMaster", "score": 19, "date": "2026-10-07" },
+    { "machine_id": "pop-the-lock", "player": "ClockWork", "score": 17, "date": "2026-09-29" },
+    { "machine_id": "color-match", "player": "MemoryPro", "score": 18, "date": "2026-10-11", "note": "18-sequence chain" },
+    { "machine_id": "color-match", "player": "RainbowBrain", "score": 15, "date": "2026-10-06" },
+    { "machine_id": "color-match", "player": "PatternKing", "score": 14, "date": "2026-09-22" },
+    { "machine_id": "pinball-classic", "player": "FlipperGod", "score": 1284750000, "date": "2026-10-10", "note": "Castle destroyed 5 times" },
+    { "machine_id": "pinball-classic", "player": "KnightRider", "score": 987450000, "date": "2026-10-04" },
+    { "machine_id": "pinball-classic", "player": "MadKing", "score": 876230000, "date": "2026-09-27" },
+    { "machine_id": "pinball-modern", "player": "MaxEffort", "score": 750000000, "date": "2026-10-13" },
+    { "machine_id": "pinball-modern", "player": "DeadpoolFan", "score": 620000000, "date": "2026-10-07" },
+    { "machine_id": "pinball-modern", "player": "MercWithBall", "score": 540000000, "date": "2026-09-30" },
+    { "machine_id": "pinball-retro", "player": "AdamsChamp", "score": 920000000, "date": "2026-10-08" },
+    { "machine_id": "pinball-retro", "player": "CreepyKooky", "score": 780000000, "date": "2026-10-03" },
+    { "machine_id": "pinball-retro", "player": "MansionLord", "score": 650000000, "date": "2026-09-24" }
+  ]
+}

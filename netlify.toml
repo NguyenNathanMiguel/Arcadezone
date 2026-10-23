@@ -1,0 +1,45 @@
+[build]
+  publish = "."
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "no-referrer-when-downgrade"
+
+[[redirects]]
+  from = "/community"
+  to = "/community.html"
+  status = 200
+
+[[redirects]]
+  from = "/machines"
+  to = "/machines.html"
+  status = 200
+
+[[redirects]]
+  from = "/tips"
+  to = "/tips.html"
+  status = 200
+
+[[redirects]]
+  from = "/locations"
+  to = "/locations.html"
+  status = 200
+
+[[redirects]]
+  from = "/contact"
+  to = "/locations.html"
+  status = 301
+
+[[redirects]]
+  from = "/leaderboard"
+  to = "/community.html"
+  status = 301
+
+[[redirects]]
+  from = "/play"
+  to = "https://arcadeworld2-0.onrender.com/"
+  status = 302
+  force = true

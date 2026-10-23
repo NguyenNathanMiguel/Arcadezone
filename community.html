@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Arcade Zone Community - Discuss arcade machine strategies, high score records, create group chats, and share invite links with players.">
+  <title>Community &amp; Group Chats - Arcade Zone</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="page-offset">
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">ARCADE<span>&nbsp;ZONE</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="machines.html">Machines</a></li>
+      <li><a href="community.html" class="active">Community</a></li>
+      <li><a href="tips.html">Tips</a></li>
+      <li><a href="locations.html">Locations</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="https://arcadeworld2-0.onrender.com/" class="nav-enter-btn">Enter Arcade</a>
+      <div id="auth-user-slot"></div>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-grid"></div>
+  <div class="container text-center page-hero-content">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a> <span>/</span> Community &amp; Squads
+    </div>
+    <h1 class="neon-text">ARCADE COMMUNITY HUB</h1>
+    <p>Connect with arcade lovers across Vietnam. Share secret machine tactics, form squads, and chat in real-time.</p>
+  </div>
+</section>
+
+<!-- MAIN CONTENT -->
+<section class="section">
+  <div class="container">
+
+    <!-- USER STATUS / SIGN-IN BANNER -->
+    <div id="community-user-profile"></div>
+
+    <!-- MAIN TABS (DISCUSSIONS VS GROUP CHATS) -->
+    <div style="display:flex; gap:16px; border-bottom:1px solid var(--border); padding-bottom:16px; margin-bottom:32px;">
+      <button class="btn community-tab-btn active" data-tab="discussions" style="font-size:0.8rem; padding:10px 24px;">
+        Community Discussions
+      </button>
+      <button class="btn btn-magenta community-tab-btn" data-tab="groups" style="font-size:0.8rem; padding:10px 24px;">
+        Group Chats &amp; Squads
+      </button>
+    </div>
+
+    <!-- TAB 1: DISCUSSIONS -->
+    <div id="tab-discussions">
+      <!-- Toolbar: Tags + Create Post Button -->
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; margin-bottom:28px;">
+        <div style="display:flex; gap:8px; flex-wrap:wrap;">
+          <button class="filter-btn feed-tag-btn active" data-tag="All">All Topics</button>
+          <button class="filter-btn feed-tag-btn" data-tag="Tips & Strategy">Tips &amp; Strategy</button>
+          <button class="filter-btn feed-tag-btn" data-tag="Machine Records">Records</button>
+          <button class="filter-btn feed-tag-btn" data-tag="Claw Loot">Claw Loot</button>
+          <button class="filter-btn feed-tag-btn" data-tag="Meetups">Meetups</button>
+        </div>
+
+        <button class="btn btn-sm" onclick="requireAuth(openCreatePostModal)">
+          + Create New Post
+        </button>
+      </div>
+
+      <!-- Feed Container -->
+      <div id="discussions-feed">
+        <div class="loading">LOADING DISCUSSIONS...</div>
+      </div>
+    </div>
+
+    <!-- TAB 2: GROUP CHATS -->
+    <div id="tab-groups" style="display:none;">
+      <div style="display:grid; grid-template-columns: 340px 1fr; gap:24px; align-items:start;">
+        
+        <!-- Left: Groups List -->
+        <div>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+            <h3 style="font-family:'Orbitron',sans-serif; font-size:1rem; color:#fff; margin:0;">
+              SQUADS &amp; GROUPS
+            </h3>
+            <div style="display:flex; gap:8px;">
+              <button class="btn btn-sm" onclick="requireAuth(openJoinGroupModal)" style="padding:6px 12px; font-size:0.68rem; border-color:var(--cyan); color:var(--cyan);">
+                Join by Code
+              </button>
+              <button class="btn btn-sm btn-magenta" onclick="requireAuth(openCreateGroupModal)" style="padding:6px 12px; font-size:0.68rem;">
+                + Create
+              </button>
+            </div>
+          </div>
+
+          <div id="groups-list-container">
+            <div class="loading">LOADING GROUPS...</div>
+          </div>
+        </div>
+
+        <!-- Right: Active Chat Window -->
+        <div class="card" id="chat-window" style="padding:0; overflow:hidden; border-color:var(--cyan); min-height:560px; display:flex; flex-direction:column; justify-content:space-between;">
+          <div class="loading" style="padding:60px;">SELECT A GROUP TO START CHATTING</div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- MODAL: GOOGLE LOGIN (SUPABASE AUTH) -->
+<div id="login-modal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.85); backdrop-filter:blur(8px); z-index:10001; align-items:center; justify-content:center; padding:20px;">
+  <div class="card" style="width:100%; max-width:440px; border-color:var(--cyan); box-shadow:0 0 30px rgba(102,252,241,0.3); position:relative;">
+    <button onclick="closeLoginModal()" style="position:absolute; top:16px; right:16px; background:none; border:none; color:var(--text-dim); font-size:1.4rem; line-height:1; cursor:pointer;" aria-label="Close">&times;</button>
+    
+    <div style="text-align:center; margin-bottom:24px;">
+      <div style="width:54px; height:54px; border-radius:50%; background:rgba(102,252,241,0.1); border:1px solid var(--cyan); display:flex; align-items:center; justify-content:center; margin:0 auto 14px;">
+        <svg width="26" height="26" viewBox="0 0 24 24"><path fill="var(--cyan)" d="M12.545,10.239v3.821h5.445c-0.712,2.315-2.647,3.972-5.445,3.972c-3.332,0-6.033-2.701-6.033-6.032s2.701-6.032,6.033-6.032c1.498,0,2.866,0.549,3.921,1.453l2.814-2.814C17.503,2.988,15.139,2,12.545,2C7.021,2,2.543,6.477,2.543,12s4.478,10,10.002,10c8.396,0,10.249-7.85,9.426-11.761H12.545z"/></svg>
+      </div>
+      <h3 style="font-family:'Orbitron',sans-serif; color:#fff; font-size:1.2rem; margin-bottom:6px;">Google Authentication</h3>
+      <p style="color:var(--text-dim); font-size:0.85rem; line-height:1.5;">Sign in securely with your Google account via Supabase Auth to participate in community chats, squads, and tips.</p>
+    </div>
+
+    <!-- Official Google Sign In Button -->
+    <button type="button" id="btn-google-login-action" onclick="handleGoogleSignIn()" class="btn" style="width:100%; display:flex; align-items:center; justify-content:center; gap:12px; padding:12px 20px; font-size:0.82rem; background:rgba(255,255,255,0.06); border-color:var(--cyan); margin-bottom:14px; text-transform:none; letter-spacing:0.5px;">
+      <svg width="20" height="20" viewBox="0 0 24 24">
+        <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+        <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+        <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+        <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+      </svg>
+      Sign in with Google
+    </button>
+
+    <div id="supabase-config-warning" style="display:none; font-size:0.75rem; color:#ffb703; background:rgba(255,183,3,0.1); border:1px solid #ffb703; border-radius:6px; padding:10px; margin-bottom:14px; text-align:left; line-height:1.4;">
+      <strong>Supabase chưa được kết nối:</strong> Vui lòng kiểm tra file <code>assets/js/supabase-config.js</code> để kích hoạt Google OAuth.
+    </div>
+
+    <div style="border-top:1px solid rgba(255,255,255,0.06); padding-top:14px; text-align:center;">
+      <div style="font-size:0.72rem; color:var(--text-dim); margin-bottom:8px;">Or instant demo mode (for offline/preview):</div>
+      <div style="display:flex; justify-content:center; gap:8px;">
+        <button type="button" class="btn btn-sm" onclick="signInWithDemo('tuan.arcade.vn@gmail.com', 'Minh Tuấn')" style="padding:4px 10px; font-size:0.68rem;">Minh Tuấn</button>
+        <button type="button" class="btn btn-sm btn-magenta" onclick="signInWithDemo('tramanh.claw@gmail.com', 'Trâm Anh')" style="padding:4px 10px; font-size:0.68rem;">Trâm Anh</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL: EDIT PROFILE -->
+<div id="edit-profile-modal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.85); backdrop-filter:blur(8px); z-index:10001; align-items:center; justify-content:center; padding:20px;">
+  <div class="card" style="width:100%; max-width:480px; border-color:var(--cyan); box-shadow:0 0 30px rgba(102,252,241,0.3); position:relative;">
+    <button onclick="closeEditProfileModal()" style="position:absolute; top:16px; right:16px; background:none; border:none; color:var(--text-dim); font-size:1.4rem; line-height:1; cursor:pointer;" aria-label="Close">&times;</button>
+    
+    <h3 style="font-family:'Orbitron',sans-serif; color:var(--cyan); font-size:1.2rem; margin-bottom:16px;">
+      Edit Member Profile
+    </h3>
+
+    <form onsubmit="event.preventDefault(); saveProfileChanges();">
+      <div style="margin-bottom:14px;">
+        <label style="display:block; font-size:0.75rem; color:var(--text-dim); margin-bottom:6px; font-family:'Orbitron',sans-serif;">Email (Google Account)</label>
+        <input type="text" id="edit-profile-email" class="search-bar" style="width:100%; border-radius:6px; opacity:0.7; cursor:not-allowed;" readonly>
+      </div>
+
+      <div style="margin-bottom:14px;">
+        <label style="display:block; font-size:0.75rem; color:var(--text-dim); margin-bottom:6px; font-family:'Orbitron',sans-serif;">Display Name</label>
+        <input type="text" id="edit-profile-name" class="search-bar" style="width:100%; border-radius:6px;" placeholder="Your gamer name..." required>
+      </div>
+
+      <div style="margin-bottom:14px;">
+        <label style="display:block; font-size:0.75rem; color:var(--text-dim); margin-bottom:6px; font-family:'Orbitron',sans-serif;">Avatar URL</label>
+        <input type="url" id="edit-profile-avatar" class="search-bar" style="width:100%; border-radius:6px;" placeholder="https://...">
+        <div style="font-size:0.72rem; color:var(--text-dim); margin-top:6px;">Choose a quick avatar style:</div>
+        <div style="display:flex; gap:6px; margin-top:4px; flex-wrap:wrap;">
+          <button type="button" class="btn btn-sm" style="padding:3px 8px; font-size:0.65rem;" onclick="setAvatarPreset('bottts')">Robot</button>
+          <button type="button" class="btn btn-sm btn-magenta" style="padding:3px 8px; font-size:0.65rem;" onclick="setAvatarPreset('pixel-art')">Pixel</button>
+          <button type="button" class="btn btn-sm btn-purple" style="padding:3px 8px; font-size:0.65rem;" onclick="setAvatarPreset('adventurer')">Adventurer</button>
+          <button type="button" class="btn btn-sm" style="padding:3px 8px; font-size:0.65rem;" onclick="setAvatarPreset('lorelei')">Cyber</button>
+        </div>
+      </div>
+
+      <div style="margin-bottom:20px;">
+        <label style="display:block; font-size:0.75rem; color:var(--text-dim); margin-bottom:6px; font-family:'Orbitron',sans-serif;">Personal Bio / Favorite Arcade</label>
+        <textarea id="edit-profile-bio" class="search-bar" style="width:100%; min-height:80px; border-radius:6px; resize:vertical;" placeholder="Tell the community about your favorite arcade games, mall locations, or records..."></textarea>
+      </div>
+
+      <div style="display:flex; justify-content:flex-end; gap:10px;">
+        <button type="button" class="btn btn-sm" onclick="closeEditProfileModal()" style="border-color:var(--border); color:var(--text-dim);">Cancel</button>
+        <button type="submit" class="btn btn-sm" id="btn-save-profile">Save Changes</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- MODAL: CREATE POST -->
+<div id="create-post-modal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.85); backdrop-filter:blur(8px); z-index:10001; align-items:center; justify-content:center; padding:20px;">
+  <div class="card" style="width:100%; max-width:540px; border-color:var(--cyan); box-shadow:0 0 30px rgba(102,252,241,0.3); position:relative;">
+    <button onclick="closeCreatePostModal()" style="position:absolute; top:16px; right:16px; background:none; border:none; color:var(--text-dim); font-size:1.4rem; line-height:1; cursor:pointer;" aria-label="Close">&times;</button>
+    
+    <h3 style="font-family:'Orbitron',sans-serif; color:var(--cyan); font-size:1.2rem; margin-bottom:16px;">
+      Create Community Post
+    </h3>
+
+    <form onsubmit="event.preventDefault(); createPost(document.getElementById('post-title').value, document.getElementById('post-tag').value, document.getElementById('post-content').value);">
+      <div style="margin-bottom:14px;">
+        <label style="display:block; font-size:0.75rem; color:var(--text-dim); margin-bottom:6px; font-family:'Orbitron',sans-serif;">Category Tag</label>
+        <select id="post-tag" class="search-bar" style="width:100%; border-radius:6px; cursor:pointer;">
+          <option value="Tips & Strategy">Tips &amp; Strategy</option>
+          <option value="Machine Records">Machine Records</option>
+          <option value="Claw Loot">Claw Loot</option>
+          <option value="Meetups">Meetups &amp; Tournaments</option>
+        </select>
+      </div>
+
+      <div style="margin-bottom:14px;">
+        <label style="display:block; font-size:0.75rem; color:var(--text-dim); margin-bottom:6px; font-family:'Orbitron',sans-serif;">Post Title</label>
+        <input type="text" id="post-title" class="search-bar" style="width:100%; border-radius:6px;" placeholder="Catchy title for your strategy or record..." required>
+      </div>
+
+      <div style="margin-bottom:20px;">
+        <label style="display:block; font-size:0.75rem; color:var(--text-dim); margin-bottom:6px; font-family:'Orbitron',sans-serif;">Content / Details</label>
+        <textarea id="post-content" class="search-bar" style="width:100%; min-height:120px; border-radius:6px; resize:vertical;" placeholder="Share the machine name, location mall, scoring tips, or thoughts..." required></textarea>
+      </div>
+
+      <div style="display:flex; justify-content:flex-end; gap:10px;">
+        <button type="button" class="btn btn-sm" onclick="closeCreatePostModal()" style="border-color:var(--border); color:var(--text-dim);">Cancel</button>
+        <button type="submit" class="btn btn-sm">Publish Post</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- MODAL: CREATE GROUP CHAT -->
+<div id="create-group-modal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.85); backdrop-filter:blur(8px); z-index:10001; align-items:center; justify-content:center; padding:20px;">
+  <div class="card" style="width:100%; max-width:480px; border-color:var(--magenta); box-shadow:0 0 30px rgba(255,110,199,0.3); position:relative;">
+    <button onclick="closeCreateGroupModal()" style="position:absolute; top:16px; right:16px; background:none; border:none; color:var(--text-dim); font-size:1.4rem; line-height:1; cursor:pointer;" aria-label="Close">&times;</button>
+    
+    <h3 style="font-family:'Orbitron',sans-serif; color:var(--magenta); font-size:1.2rem; margin-bottom:16px;">
+      Create Group Chat Squad
+    </h3>
+
+    <form onsubmit="event.preventDefault(); submitCreateGroup();">
+      <!-- Group Privacy Setting -->
+      <div style="margin-bottom:16px;">
+        <label style="display:block; font-size:0.75rem; color:var(--text-dim); margin-bottom:8px; font-family:'Orbitron',sans-serif;">Privacy Setting</label>
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px;">
+          <label style="display:flex; align-items:flex-start; gap:8px; padding:10px 12px; background:var(--bg3); border:1px solid var(--border); border-radius:6px; cursor:pointer;" id="label-group-public">
+            <input type="radio" name="group-privacy-opt" value="public" checked onchange="handlePrivacyChange('public')" style="margin-top:2px;">
+            <div>
+              <div style="color:#fff; font-size:0.82rem; font-weight:700;">Public</div>
+              <div style="color:var(--text-dim); font-size:0.7rem; line-height:1.3;">Visible to everyone in the squads list.</div>
+            </div>
+          </label>
+          <label style="display:flex; align-items:flex-start; gap:8px; padding:10px 12px; background:var(--bg3); border:1px solid var(--border); border-radius:6px; cursor:pointer;" id="label-group-private">
+            <input type="radio" name="group-privacy-opt" value="private" onchange="handlePrivacyChange('private')" style="margin-top:2px;">
+            <div>
+              <div style="color:#fff; font-size:0.82rem; font-weight:700;">Private</div>
+              <div style="color:var(--text-dim); font-size:0.7rem; line-height:1.3;">Hidden from list. Requires 6-char code to join.</div>
+            </div>
+          </label>
+        </div>
+        <div id="private-badge-hint" style="display:none; margin-top:8px; font-size:0.72rem; color:var(--magenta); background:rgba(255,110,199,0.08); border:1px solid rgba(255,110,199,0.3); border-radius:6px; padding:8px 10px;">
+          A unique 6-character access code will be generated for this private squad. Share it with your friends so they can join!
+        </div>
+      </div>
+
+      <div style="margin-bottom:14px;">
+        <label style="display:block; font-size:0.75rem; color:var(--text-dim); margin-bottom:6px; font-family:'Orbitron',sans-serif;">Group Name</label>
+        <input type="text" id="group-name" class="search-bar" style="width:100%; border-radius:6px;" placeholder="e.g. Thu Duc Claw Hunters" required>
+      </div>
+
+      <div style="margin-bottom:14px;">
+        <label style="display:block; font-size:0.75rem; color:var(--text-dim); margin-bottom:6px; font-family:'Orbitron',sans-serif;">Category</label>
+        <select id="group-cat" class="search-bar" style="width:100%; border-radius:6px; cursor:pointer;">
+          <option value="Merchandiser">Merchandiser / Claw</option>
+          <option value="Redemption">Redemption Games</option>
+          <option value="Pinball">Pinball</option>
+          <option value="Rhythm">Rhythm &amp; Music</option>
+          <option value="General">General Arcade</option>
+        </select>
+      </div>
+
+      <div style="margin-bottom:20px;">
+        <label style="display:block; font-size:0.75rem; color:var(--text-dim); margin-bottom:6px; font-family:'Orbitron',sans-serif;">Description</label>
+        <textarea id="group-desc" class="search-bar" style="width:100%; min-height:80px; border-radius:6px; resize:vertical;" placeholder="What is this group for? (e.g. Weekend meetups at Gigamall)..." required></textarea>
+      </div>
+
+      <div style="display:flex; justify-content:flex-end; gap:10px;">
+        <button type="button" class="btn btn-sm" onclick="closeCreateGroupModal()" style="border-color:var(--border); color:var(--text-dim);">Cancel</button>
+        <button type="submit" class="btn btn-magenta btn-sm" id="btn-submit-create-group">Create Squad</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- MODAL: JOIN PRIVATE GROUP BY CODE -->
+<div id="join-group-modal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.85); backdrop-filter:blur(8px); z-index:10001; align-items:center; justify-content:center; padding:20px;">
+  <div class="card" style="width:100%; max-width:440px; border-color:var(--cyan); box-shadow:0 0 30px rgba(102,252,241,0.3); position:relative;">
+    <button onclick="closeJoinGroupModal()" style="position:absolute; top:16px; right:16px; background:none; border:none; color:var(--text-dim); font-size:1.4rem; line-height:1; cursor:pointer;" aria-label="Close">&times;</button>
+    
+    <h3 style="font-family:'Orbitron',sans-serif; color:var(--cyan); font-size:1.2rem; margin-bottom:10px;">
+      Join Private Squad
+    </h3>
+    <p style="color:var(--text-dim); font-size:0.85rem; margin-bottom:20px; line-height:1.5;">
+      Enter the 6-character access code provided by the squad creator to unlock and join this private chat.
+    </p>
+
+    <form onsubmit="event.preventDefault(); submitJoinGroupByCode();">
+      <div style="margin-bottom:20px;">
+        <label style="display:block; font-size:0.75rem; color:var(--text-dim); margin-bottom:8px; font-family:'Orbitron',sans-serif;">6-Character Squad Code</label>
+        <input type="text" id="join-code-input" class="search-bar" maxlength="6" style="width:100%; border-radius:6px; font-family:'Orbitron',monospace; font-size:1.6rem; letter-spacing:6px; text-transform:uppercase; text-align:center; padding:12px; border-color:var(--cyan);" placeholder="XXXXXX" required autocomplete="off">
+        <div id="join-code-error" style="display:none; color:#ff5574; font-size:0.75rem; margin-top:8px;"></div>
+      </div>
+
+      <div style="display:flex; justify-content:flex-end; gap:10px;">
+        <button type="button" class="btn btn-sm" onclick="closeJoinGroupModal()" style="border-color:var(--border); color:var(--text-dim);">Cancel</button>
+        <button type="submit" class="btn btn-sm" id="btn-submit-join-code">Join Squad</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">ARCADE<span>&nbsp;ZONE</span></div>
+        <p class="footer-tagline">The global arcade encyclopedia and Vietnam player community.</p>
+      </div>
+      <div>
+        <p class="footer-heading">Explore</p>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="machines.html">Arcade Machines</a></li>
+          <li><a href="community.html">Community &amp; Groups</a></li>
+          <li><a href="tips.html">Pro Tips &amp; Strategies</a></li>
+          <li><a href="locations.html">Arcade Finder Vietnam</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-heading">Play Online</p>
+        <p style="color:var(--text-dim); font-size:0.85rem; line-height:1.6; margin-bottom:14px;">
+          Jump into the 2D multiplayer simulation to roam arcade floors and challenge real players.
+        </p>
+        <a href="https://arcadeworld2-0.onrender.com/" class="btn btn-enter btn-sm">Enter Arcade World</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Arcade Zone. All rights reserved.</span>
+      <span><a href="https://arcadeworld2-0.onrender.com/">Play Arcade World Online</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- Supabase JS SDK & Client Config -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="assets/js/supabase-config.js"></script>
+<script src="assets/js/supabase-client.js"></script>
+
+<script src="assets/js/main.js"></script>
+<script src="data/community-data.js"></script>
+<script src="assets/js/community.js"></script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Worldwide Arcade Machines Encyclopedia — Explore redemption, claw cranes, pinball, rhythm, and racing cabinets from around the world.">
+  <title>Arcade Machines Encyclopedia — Arcade Zone</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="page-offset">
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">ARCADE<span>&nbsp;ZONE</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="machines.html" class="active">Machines</a></li>
+      <li><a href="community.html">Community</a></li>
+      <li><a href="tips.html">Tips</a></li>
+      <li><a href="locations.html">Locations</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="https://arcadeworld2-0.onrender.com/" class="nav-enter-btn">🕹️ Enter Arcade</a>
+      <div id="auth-user-slot"></div>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-grid"></div>
+  <div class="container text-center page-hero-content">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a> <span>/</span> Arcade Encyclopedia
+    </div>
+    <h1 class="neon-text">ARCADE MACHINES ENCYCLOPEDIA</h1>
+    <p>A comprehensive global archive of iconic arcade cabinets: mechanics, payouts, pro strategies, and world records.</p>
+  </div>
+</section>
+
+<!-- MAIN CONTENT -->
+<section class="section">
+  <div class="container">
+    <!-- FILTER & SEARCH BAR -->
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">All Cabinets</button>
+      <button class="filter-btn" data-filter="redemption">🎟️ Redemption</button>
+      <button class="filter-btn" data-filter="merchandiser">🎁 Merchandiser</button>
+      <button class="filter-btn" data-filter="pinball">🔮 Pinball</button>
+      <button class="filter-btn" data-filter="rhythm">🎵 Rhythm &amp; Music</button>
+      <button class="filter-btn" data-filter="racing">🏎️ Racing</button>
+      <button class="filter-btn" data-filter="shooter">💥 Shooters</button>
+      <input type="text" id="machine-search" class="search-bar" placeholder="Search machines, manufacturers, mechanics...">
+      <span id="machine-count" style="font-family:'Orbitron',sans-serif; font-size:0.75rem; color:var(--text-dim); margin-left:auto;">20+ Machines</span>
+    </div>
+
+    <!-- MACHINES GRID -->
+    <div class="card-grid" id="machines-grid">
+      <!-- Populated dynamically via assets/js/machines.js -->
+      <div class="loading">LOADING MACHINES ENCYCLOPEDIA...</div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMUNITY TACTICS CALLOUT -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="card" style="border-color:var(--cyan); background: radial-gradient(ellipse at 50% 50%, rgba(102,252,241,0.06), #10101e 80%); padding: 40px; text-align: center;">
+      <h3 style="font-family:'Orbitron',sans-serif; font-size:1.4rem; color:var(--cyan); margin-bottom:12px;">💬 JOIN THE ARCADE COMMUNITY</h3>
+      <p style="color:var(--text-dim); max-width:640px; margin:0 auto 24px;">
+        Discuss your favorite cabinets, share high score replays, join claw machine squads, and chat with fellow players across Vietnam.
+      </p>
+      <div style="display:flex; justify-content:center; gap:16px; flex-wrap:wrap;">
+        <a href="community.html" class="btn btn-sm">Join Community Discussions</a>
+        <a href="locations.html" class="btn btn-magenta btn-sm">Find Arcades Near You</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">ARCADE<span>&nbsp;ZONE</span></div>
+        <p class="footer-tagline">The global arcade encyclopedia and Vietnam player community.</p>
+      </div>
+      <div>
+        <p class="footer-heading">Explore</p>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="machines.html">Arcade Machines</a></li>
+          <li><a href="community.html">Community &amp; Groups</a></li>
+          <li><a href="tips.html">Pro Tips &amp; Strategies</a></li>
+          <li><a href="locations.html">Arcade Finder Vietnam</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-heading">Play Online</p>
+        <p style="color:var(--text-dim); font-size:0.85rem; line-height:1.6; margin-bottom:14px;">
+          Experience our virtual arcade floor online in your browser. Roam cabinets and meet players.
+        </p>
+        <a href="https://arcadeworld2-0.onrender.com/" class="btn btn-enter btn-sm">🕹️ Enter Arcade World</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Arcade Zone. All rights reserved.</span>
+      <span><a href="https://arcadeworld2-0.onrender.com/">Play Arcade World Online</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- Supabase JS SDK & Client Config -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="assets/js/supabase-config.js"></script>
+<script src="assets/js/supabase-client.js"></script>
+
+<script src="assets/js/main.js"></script>
+<script src="data/machines-data.js"></script>
+<script src="assets/js/machines.js"></script>
+</body>
+</html>
